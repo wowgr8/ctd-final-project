@@ -1,12 +1,22 @@
-import logo from './logo.svg';
 import './App.css';
+import { 
+  BrowserRouter as Router,
+  Routes,
+  Route 
+  } from "react-router-dom";
+import LandingPage from './components/LandingPage';
+import TodoList from './components/TodoList';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
+      <Router>
         <p>Hello World!</p>
-      </header>
+        <Routes>
+          <Route path='/landing' exact element={<LandingPage />} />
+          <Route path='todoList' exact element={<TodoList />} />
+        </Routes>
+      </Router>
     </div>
   );
 }
