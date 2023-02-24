@@ -1,8 +1,11 @@
 import React from 'react'
 
-function TodoListItem() {
+function TodoListItem({ fields }) {
   return (
-    <div>TodoListItem Placeholder</div>
+    <>
+      <li >{fields.Title}</li>
+      
+    </>
   )
 }
 
