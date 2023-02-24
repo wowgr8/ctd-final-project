@@ -6,6 +6,7 @@ import {
   } from "react-router-dom";
 import LandingPage from './components/LandingPage';
 import TodoList from './components/TodoList';
+import TodoContainer from './components/TodoContainer';
 
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
         <p>Hello World!</p>
         <Routes>
           <Route path='/landing' exact element={<LandingPage />} />
-          <Route path='todoList' exact element={<TodoList />} />
+          <Route path='todoContainer' exact element={<TodoContainer tableName=" Your Todo List " />} />
         </Routes>
       </Router>
     </div>
