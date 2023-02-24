@@ -1,12 +1,13 @@
 import React from 'react'
+import TodoListItem from './TodoListItem'
 
 function TodoList({ todoList }) {
   console.log("In todoList.js - todoList: ", todoList)
   return (
     <>
-      <div>TodoList Placeholder</div>
+      <div>TodoList.js Placeholder</div>
       {todoList.map((item) =>{
-        return <h1>{item.fields.Title}</h1>
+        return <TodoListItem key={item.id} {...item}  />
       })}
     </>
   )
