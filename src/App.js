@@ -1,16 +1,16 @@
-import './App.css';
+// import './App.css';
 import { 
   BrowserRouter as Router,
   Routes,
   Route 
   } from "react-router-dom";
 import LandingPage from './components/LandingPage';
-import TodoList from './components/TodoList';
+import styles from './App.module.css';
 import TodoContainer from './components/TodoContainer';
 
 function App() {
   return (
-    <div className="App">
+    <div className={styles.bgColor}>
       <Router>
         <p>Hello World!</p>
         <Routes>
