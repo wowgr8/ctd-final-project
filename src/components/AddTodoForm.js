@@ -10,9 +10,20 @@ function AddTodoForm({ onAddTodo }) {
     setTodoTitle("");
   }
 
+  const handleTitleChange = (event) => {
+    const newTodoTitle = event.target.value;
+    setTodoTitle(newTodoTitle);
+  };
+
   return (
     <form onSubmit={handleAddTodo}>
-      <InputWithLabel />
+      <InputWithLabel 
+        todoTitle={todoTitle}
+        handleTitleChange={handleTitleChange}
+      >
+        Title:
+      </InputWithLabel>
+      <button type="submit">Add</button>
     </form>
   )
 }
