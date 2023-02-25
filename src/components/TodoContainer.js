@@ -15,8 +15,16 @@ function TodoContainer({ tableName }) {
     })
     .then((response) => response.json())
     .then((result) => {
+      result.records.sort(function(objectA, objectB){
+        if (objectA.fields.Title < objectB.fields.Title) {
+          return -1;
+        } else if (objectA.fields.Title > objectB.fields.Title) {
+          return 1;
+        } else {
+          return 0;
+        }
+      })
       setTodoList(result.records);
-      console.log(result.records)
       setIsLoading(false)
     })
   },[tableName]);
