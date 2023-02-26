@@ -1,11 +1,9 @@
 import React, {useState} from 'react';
 import { useNavigate } from "react-router-dom";
-import TodoContainer from './TodoContainer';
-
-
+import styles from './LandingPage.module.css'
 
 function LandingPage() {
-  const [entered, isEntered] = useState(false)
+  const [entered, isEntered] = useState(false);
   
   let navigate = useNavigate(); 
   
@@ -16,13 +14,15 @@ function LandingPage() {
     console.log("navigate")
   }
   return (
-    <>
-      <div>LandingPage Placeholder</div>
-      <h3>Greeting with button to enter site (todoContainer.js)</h3>
-      <button onClick={onEnter} >
-        Click Here To Get Started
-      </button>
-    </>
+    <div className={styles.card}>
+      <div className={styles.cardHeader}>
+        <h2 className={styles.cardTitle}>Welcome to the Todo App</h2>
+      </div>
+      <div className={styles.cardBody}>
+        <p className={styles.cardText}>Get organized and stay on top of your tasks with our simple and intuitive todo list app.</p>
+        <button className={styles.cardButton} onClick={onEnter}>Get Started</button>
+      </div>
+    </div>
   )
 }
 
