@@ -9,10 +9,9 @@ function LandingPage() {
   
   const onEnter = () => {
     isEntered(!entered)
-    console.log("Entered is:", entered)
     navigate('/todoContainer')
-    console.log("navigate")
   }
+  
   return (
     <div className={styles.card}>
       <div className={styles.cardHeader}>
