@@ -14,7 +14,7 @@ function App() {
       <Router>
         <p>Hello World!</p>
         <Routes>
-          <Route path='/landing' exact element={<LandingPage />} />
+          <Route path='/' exact element={<LandingPage />} />
           <Route path='todoContainer' exact element={<TodoContainer tableName="Your Todos" />} />
         </Routes>
       </Router>
