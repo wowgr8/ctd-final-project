@@ -4,7 +4,7 @@ import styles from './TodoListItem.module.css';
 
 function TodoListItem({ fields, onRemoveTodo, id }) {
   return (
-    <tbody>
+    <tbody className={styles}>
       <tr>
         <td>{fields.Title}</td>
         <td>{fields.Description}</td>
