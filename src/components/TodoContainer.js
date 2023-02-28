@@ -48,7 +48,7 @@ function TodoContainer({ tableName }) {
         fields: {
           Title: newTodo[0].title,
           Description: newTodo[0].description,
-          Status: "In PROGRESS",
+          Status: "In Progress",
           "Due Date": newTodo[0].dueDate
         },
         typecast: true,
@@ -82,8 +82,7 @@ function TodoContainer({ tableName }) {
 
   return (
     <div>
-      <p>TodoContainer Placeholder!</p>
-      <h1>This is the table name: {tableName}</h1>
+      <h1>{tableName}</h1>
       <AddTodoForm onAddTodo={addTodo} />
       {isLoading 
         ? (<p>Loading...</p>)
