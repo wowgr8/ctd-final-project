@@ -47,6 +47,9 @@ function TodoContainer({ tableName }) {
       body: JSON.stringify({
         fields: {
           Title: newTodo[0].title,
+          Description: newTodo[0].description,
+          Status: newTodo[0].status,
+          "Due Date": newTodo[0].dueDate
         },
         typecast: true,
       })
@@ -61,16 +64,18 @@ function TodoContainer({ tableName }) {
     const res = await fetch(
     `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE_ID}/${tableName}/${id}`,
     {
-        method: 'DELETE',
+      method: 'DELETE',
         headers: {
         Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_API_KEY}`,
         "Content-Type": "application/json",
         },
     });
+
     const filteredTodoList = todoList.filter(
       (item) => id !== item.id
       );  
     setTodoList(filteredTodoList);
+
     const data = await res.json();
     return data;
   };
