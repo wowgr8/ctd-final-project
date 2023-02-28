@@ -10,11 +10,11 @@ th, td {
 }
 
 th {
-  background-color: #f2f2f2;
+  background-color: #6494AA;
 }
 
 tr:hover {
-  background-color: #f5f5f5;
+  background-color: #6494AA;
 }
 
 td button {
@@ -24,4 +24,11 @@ td button {
   background-color: #f44336;
   color: white;
   cursor: pointer;
+}
+
+td:nth-child(2) {
+  max-width: 300px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
