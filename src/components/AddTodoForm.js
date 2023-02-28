@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
 function AddTodoForm({ onAddTodo }) {
   const [ todoTitle, setTodoTitle ] = useState('');
   const [todoDescription, setTodoDescription] = useState('');
-  const [todoStatus, setTodoStatus] = useState('');
+  // const [todoStatus, setTodoStatus] = useState('');
   const [todoDueDate, setTodoDueDate] = useState('');
 
   const handleAddTodo = (event) => {
@@ -17,13 +17,13 @@ function AddTodoForm({ onAddTodo }) {
         id: Date.now(),
         title: todoTitle,
         description: todoDescription,
-        status: todoStatus,
+        // status: todoStatus,
         dueDate: todoDueDate,
       },
     ]);
     setTodoTitle('');
     setTodoDescription('');
-    setTodoStatus('');
+    // setTodoStatus('');
     setTodoDueDate('');
   };
 
@@ -37,10 +37,10 @@ function AddTodoForm({ onAddTodo }) {
     setTodoDescription(newTodoDescription);
   };
 
-  const handleStatusChange = (event) => {
-    const newTodoStatus = event.target.value;
-    setTodoStatus(newTodoStatus);
-  };
+  // const handleStatusChange = (event) => {
+  //   const newTodoStatus = event.target.value;
+  //   setTodoStatus(newTodoStatus);
+  // };
 
   const handleDueDateChange = (event) => {
     const newTodoDueDate = event.target.value;
@@ -56,9 +56,9 @@ function AddTodoForm({ onAddTodo }) {
       <InputWithLabel todoTitle={todoDescription} handleTitleChange={handleDescriptionChange}>
         Description:
       </InputWithLabel>
-      <InputWithLabel todoTitle={todoStatus} handleTitleChange={handleStatusChange}>
+      {/* <InputWithLabel todoTitle={todoStatus} handleTitleChange={handleStatusChange}>
         Status:
-      </InputWithLabel>
+      </InputWithLabel> */}
       <InputWithLabel todoTitle={todoDueDate} handleTitleChange={handleDueDateChange}>
         Due Date:
       </InputWithLabel>
