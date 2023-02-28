@@ -6,9 +6,21 @@ function TodoList({ todoList, onRemoveTodo }) {
   console.log("In todoList.js - todoList: ", todoList)
   return (
     <>
-      {todoList.map((item) =>{
-        return <TodoListItem key={item.id} {...item}  onRemoveTodo={onRemoveTodo}/>
-      })}
+      <table>
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Status</th>
+            <th>Due Date</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+
+        {todoList.map((item) =>{
+          return <TodoListItem key={item.id} {...item}  onRemoveTodo={onRemoveTodo}/>
+        })}
+      </table>
     </>
   )
 }
