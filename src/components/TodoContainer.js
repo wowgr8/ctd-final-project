@@ -48,7 +48,7 @@ function TodoContainer({ tableName }) {
         fields: {
           Title: newTodo[0].title,
           Description: newTodo[0].description,
-          Status: newTodo[0].status,
+          Status: "In PROGRESS",
           "Due Date": newTodo[0].dueDate
         },
         typecast: true,
