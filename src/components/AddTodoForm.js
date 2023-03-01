@@ -1,8 +1,7 @@
 import React, {useState} from 'react';
 import InputWithLabel from './InputWithLabel';
 import PropTypes from 'prop-types';
-
-// add svg icon for add button
+import styles from './AddTodoForm.module.css';
 
 function AddTodoForm({ onAddTodo, isLoading }) {
   const [todoField, setTodoFields] = useState({ title: '', description: '', dueDate: '' });
@@ -30,7 +29,7 @@ function AddTodoForm({ onAddTodo, isLoading }) {
     setShowForm(!showForm);
   }
   return (
-    <>
+    <div className={styles}>
       {showForm 
         ? 
           <form onSubmit={handleAddTodo}>
@@ -41,6 +40,7 @@ function AddTodoForm({ onAddTodo, isLoading }) {
             >
               Title:
             </InputWithLabel>
+            &nbsp;
             <InputWithLabel
               name="description"
               value={todoField.description}
@@ -48,6 +48,7 @@ function AddTodoForm({ onAddTodo, isLoading }) {
             >
               Description:
             </InputWithLabel>
+            &nbsp;
             <InputWithLabel
               name="dueDate"
               value={todoField.dueDate}
@@ -62,11 +63,11 @@ function AddTodoForm({ onAddTodo, isLoading }) {
         : <>
             { isLoading 
               ? <></>
-              : <button onClick={onShowForm}>Add New Todo </button>
+              : <button id={styles.buttonTwo} onClick={onShowForm}>Add New Todo </button>
             }
           </>
       }
-    </>
+    </div>
   )
 }
 
