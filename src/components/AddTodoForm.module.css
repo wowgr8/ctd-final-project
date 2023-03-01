@@ -1,0 +1,18 @@
+button {
+  margin-left: 20px;
+  background-color: blueviolet;
+}
+
+#buttonTwo{
+  margin-left: 20px;
+  display: block;
+  margin: 0 auto;
+  background-color: #789d29;
+}
+
+form {
+  border-style: solid;
+  border-width: 2px;
+  border-color: black;
+  padding: 10px;
+}
