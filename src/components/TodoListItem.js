@@ -9,7 +9,7 @@ function TodoListItem({ fields, onRemoveTodo, id }) {
         <td>{fields.Title}</td>
         <td>{fields.Description}</td>
         <td>{fields.Status}</td>
-        <td>{fields["Due Date"]}</td>
+        <td>{new Date(fields['Due Date']).toLocaleDateString()}</td>
         <td>
           <button type="button" onClick={() => onRemoveTodo(id)}>
             Remove
