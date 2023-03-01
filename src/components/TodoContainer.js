@@ -56,7 +56,7 @@ function TodoContainer({ tableName }) {
     })
     .then((response) => response.json())
     .then((data) => {
-      setTodoList([...todoList, data]);
+      setTodoList([...todoList, data].sort((a, b) => (a.fields.Title > b.fields.Title) ? 1 : -1));
     })
   };
 
