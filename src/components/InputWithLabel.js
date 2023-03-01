@@ -1,7 +1,7 @@
 import React, { useRef, useEffect} from 'react';
 import PropTypes from 'prop-types';
 
-function InputWithLabel({ todoTitle, handleTitleChange, children}) {
+function InputWithLabel({ name, value, handleInputChange, children}) {
   const inputRef = useRef();
 
   useEffect(() => {
@@ -10,23 +10,24 @@ function InputWithLabel({ todoTitle, handleTitleChange, children}) {
   
   return (
     <>
-      <label htmlFor="todoTitle">{children}</label>
+      <label htmlFor={name}>{children}</label>
       <input 
-        id="todoTitle" 
+        id={name} 
         type="text" 
-        name="title" 
+        name={name}
         ref={inputRef}
-        value={todoTitle} 
-        onChange={handleTitleChange}
+        value={value} 
+        onChange={handleInputChange}
       />
     </>
   )
 }
 
 InputWithLabel.propTypes = {
-  todoTitle: PropTypes.string,
-  handleTitleChange: PropTypes.func.isRequired,
-  children: PropTypes.string
+  children: PropTypes.string,
+  name: PropTypes.string.isRequired,
+  value: PropTypes.string,
+  handleInputChange: PropTypes.func.isRequired,
 }
 
 export default InputWithLabel
