@@ -1,5 +1,6 @@
 import React, { useRef, useEffect} from 'react';
 import PropTypes from 'prop-types';
+import styles from './AddTodoForm.module.css';
 
 function InputWithLabel({ name, value, handleInputChange, children}) {
   const inputRef = useRef();
@@ -10,7 +11,7 @@ function InputWithLabel({ name, value, handleInputChange, children}) {
   
   return (
     <>
-      <label htmlFor={name}>{children}</label>
+      <label className={styles.label} htmlFor={name}>{children}</label> 
       <input 
         id={name} 
         type="text" 
