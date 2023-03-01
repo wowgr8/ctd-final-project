@@ -11,7 +11,6 @@ function App() {
   return (
     <div className={styles.bgColor}>
       <Router>
-        <p>Hello World!</p>
         <Routes>
           <Route path='/' exact element={<LandingPage />} />
           <Route path='todoContainer' exact element={<TodoContainer tableName="Your Todos" />} />
