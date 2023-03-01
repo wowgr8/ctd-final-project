@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 // add svg icon for add button
 
-function AddTodoForm({ onAddTodo }) {
+function AddTodoForm({ onAddTodo, isLoading }) {
   // const [ todoTitle, setTodoTitle ] = useState('');
   // const [todoDescription, setTodoDescription] = useState('');
   // const [todoDueDate, setTodoDueDate] = useState('');
@@ -80,7 +80,12 @@ function AddTodoForm({ onAddTodo }) {
               Add
             </button>
           </form>          
-        : <button onClick={onShowForm}>Add New Todo </button>
+        : <>
+            { isLoading 
+              ? <></>
+              : <button onClick={onShowForm}>Add New Todo </button>
+            }
+          </>
       }
     </>
   )
@@ -88,6 +93,7 @@ function AddTodoForm({ onAddTodo }) {
 
 AddTodoForm.propTypes = {
   onAddTodo: PropTypes.func.isRequired,
+  isLoading: PropTypes.bool
 }
 
 export default AddTodoForm
