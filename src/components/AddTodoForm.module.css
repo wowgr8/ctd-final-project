@@ -7,7 +7,8 @@ button {
   margin-left: 20px;
   display: block;
   margin: 0 auto;
-  background-color: #789d29;
+  /* background-color: #789d29; */
+  background: linear-gradient(to right, #4B0082, #FF8C00);
 }
 
 form {
