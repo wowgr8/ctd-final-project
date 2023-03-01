@@ -7,8 +7,8 @@ import PropTypes from 'prop-types';
 function AddTodoForm({ onAddTodo }) {
   const [ todoTitle, setTodoTitle ] = useState('');
   const [todoDescription, setTodoDescription] = useState('');
-  // const [todoStatus, setTodoStatus] = useState('');
   const [todoDueDate, setTodoDueDate] = useState('');
+  const [showForm, setShowForm] = useState(false)
 
   const handleAddTodo = (event) => {
     event.preventDefault();
@@ -17,13 +17,11 @@ function AddTodoForm({ onAddTodo }) {
         id: Date.now(),
         title: todoTitle,
         description: todoDescription,
-        // status: todoStatus,
         dueDate: todoDueDate,
       },
     ]);
     setTodoTitle('');
     setTodoDescription('');
-    // setTodoStatus('');
     setTodoDueDate('');
   };
 
@@ -37,33 +35,33 @@ function AddTodoForm({ onAddTodo }) {
     setTodoDescription(newTodoDescription);
   };
 
-  // const handleStatusChange = (event) => {
-  //   const newTodoStatus = event.target.value;
-  //   setTodoStatus(newTodoStatus);
-  // };
-
   const handleDueDateChange = (event) => {
     const newTodoDueDate = event.target.value;
     setTodoDueDate(newTodoDueDate);
   };
 
-
+  const onShowForm = () => {
+    setShowForm(!showForm);
+  }
   return (
-    <form onSubmit={handleAddTodo}>
-      <InputWithLabel todoTitle={todoTitle} handleTitleChange={handleTitleChange}>
-        Title:
-      </InputWithLabel>
-      <InputWithLabel todoTitle={todoDescription} handleTitleChange={handleDescriptionChange}>
-        Description:
-      </InputWithLabel>
-      {/* <InputWithLabel todoTitle={todoStatus} handleTitleChange={handleStatusChange}>
-        Status:
-      </InputWithLabel> */}
-      <InputWithLabel todoTitle={todoDueDate} handleTitleChange={handleDueDateChange}>
-        Due Date:
-      </InputWithLabel>
-      <button type="submit">Add</button>
-    </form>
+    <>
+      {showForm 
+        ? 
+          <form onSubmit={handleAddTodo}>
+            <InputWithLabel todoTitle={todoTitle} handleTitleChange={handleTitleChange}>
+              Title:
+            </InputWithLabel>
+            <InputWithLabel todoTitle={todoDescription} handleTitleChange={handleDescriptionChange}>
+              Description:
+            </InputWithLabel>
+            <InputWithLabel todoTitle={todoDueDate} handleTitleChange={handleDueDateChange}>
+              Due Date:
+            </InputWithLabel>
+            <button type="submit">Add</button>
+          </form>          
+        : <button onClick={onShowForm}>Add New Todo </button>
+      }
+    </>
   )
 }
 
