@@ -47,3 +47,13 @@
 .cardButton:hover {
   background-color: #3e8e41;
 }
+
+#gifCard {
+  background-image: url('https://media.giphy.com/media/aSZSj0mT8f6tW/giphy.gif');
+  background-size: cover;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-top: 2.5rem;
+  padding: 1rem;
+  padding-bottom: 70%;
+}
