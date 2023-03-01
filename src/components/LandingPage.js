@@ -20,6 +20,7 @@ function LandingPage() {
       <div className={styles.cardBody}>
         <p className={styles.cardText}>Get organized and stay on top of your tasks with our simple and intuitive todo list app.</p>
         <button className={styles.cardButton} onClick={onEnter}>Get Started</button>
+        <div id={styles.gifCard}></div>
       </div>
     </div>
   )
