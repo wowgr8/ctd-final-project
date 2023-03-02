@@ -59,7 +59,8 @@ function TodoList({ todoList, setTodoList, onRemoveTodo }) {
 
 TodoList.propTypes = {
   todoList: PropTypes.array,
-  onRemoveTodo: PropTypes.func.isRequired
+  onRemoveTodo: PropTypes.func.isRequired,
+  setTodoList: PropTypes.func,
 }
 
 export default TodoList
