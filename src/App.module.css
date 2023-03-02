@@ -1,11 +1,14 @@
 .bgColor {
   background: #3A445D;
-  padding: 20px;
+  padding: 5px;
+  padding-bottom: 40px;
   height: 100vw; 
   color: #E9B872;
   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   justify-content: center;
   display: flex;
+  height: 100vh;
+  overflow: hidden;
 }
 
 .titleFont {
