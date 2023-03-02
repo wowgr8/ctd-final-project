@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import TodoListItem from './TodoListItem';
 import PropTypes from 'prop-types';
+import Styles from './TodoList.module.css';
 
 function TodoList({ todoList, setTodoList, onRemoveTodo }) {
   const [sortBy, setSortBy] = useState('none');
@@ -53,6 +54,10 @@ function TodoList({ todoList, setTodoList, onRemoveTodo }) {
           return <TodoListItem key={item.id} {...item}  onRemoveTodo={onRemoveTodo}/>
         })}
       </table>
+        <div id={Styles.pagination}>
+          <button>Previous 10</button>
+          <button>Next 10</button>
+        </div>
     </>
   )
 }
