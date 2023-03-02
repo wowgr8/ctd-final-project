@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react'
 import AddTodoForm from './AddTodoForm';
 import TodoList from './TodoList';
 import PropTypes from 'prop-types';
+import Styles from './TodoContainer.module.css';
 
 function TodoContainer({ tableName }) {
   const [todoList, setTodoList] = useState([]);
@@ -81,7 +82,7 @@ function TodoContainer({ tableName }) {
   };
 
   return (
-    <div>
+    <div id={Styles.body}>
       <h1>{tableName}</h1>
       <AddTodoForm onAddTodo={addTodo} isLoading={isLoading} />
       {isLoading 
