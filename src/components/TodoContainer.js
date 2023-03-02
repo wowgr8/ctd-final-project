@@ -87,7 +87,7 @@ function TodoContainer({ tableName }) {
       <AddTodoForm onAddTodo={addTodo} isLoading={isLoading} />
       {isLoading 
         ? (<p>Loading...</p>)
-        : (<TodoList todoList={todoList}  onRemoveTodo={removeTodo} />)
+        : (<TodoList todoList={todoList} setTodoList={setTodoList}  onRemoveTodo={removeTodo} />)
       }
     </div>
   )
