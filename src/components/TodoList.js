@@ -5,6 +5,7 @@ import Styles from './TodoList.module.css';
 
 function TodoList({ todoList, setTodoList, onRemoveTodo }) {
   const [sortBy, setSortBy] = useState('none');
+  const [currentPage, setCurrentPage] = useState(1);
 
   const sortTodoList = (sortType) => {
     let sortedTodoList = [...todoList];
@@ -25,38 +26,53 @@ function TodoList({ todoList, setTodoList, onRemoveTodo }) {
     setTodoList(sortedTodoList);
   }
 
+  const itemsPerPage = 10;
+  const totalPages = Math.ceil(todoList.length / itemsPerPage);
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+
+  const displayTodoList = todoList.slice(startIndex, endIndex);
+
+  const handlePrevPage = () => {
+    setCurrentPage(currentPage - 1);
+  };
+
+  const handleNextPage = () => {
+    setCurrentPage(currentPage + 1);
+  };
+
   return (
     <>
       <table>
         <thead>
-          <tr>
+          <tr id={Styles.tableRow}>
             <th>
               Title       
               <button onClick={() => sortTodoList('title-asc')}>▲</button>
-              <button onClick={() => sortTodoList('title-desc')}>▼</button>
+              <button className={Styles.btn2} onClick={() => sortTodoList('title-desc')}>▼</button>
             </th>
             <th>
               Description       
               <button onClick={() => sortTodoList('description-asc')}>▲</button>
-              <button onClick={() => sortTodoList('description-desc')}>▼</button>
+              <button className={Styles.btn2} onClick={() => sortTodoList('description-desc')}>▼</button>
             </th> 
             <th>Status</th>
             <th>
               Due Date
               <button onClick={() => sortTodoList('dueDateAsc')}>▲</button>
-              <button onClick={() => sortTodoList('dueDateDesc')}>▼</button>
+              <button className={Styles.btn2} onClick={() => sortTodoList('dueDateDesc')}>▼</button>
             </th>
             <th>Actions</th>
           </tr>
         </thead>
 
-        {todoList.map((item) =>{
+        {displayTodoList.map((item) =>{
           return <TodoListItem key={item.id} {...item}  onRemoveTodo={onRemoveTodo}/>
         })}
       </table>
         <div id={Styles.pagination}>
-          <button>Previous 10</button>
-          <button>Next 10</button>
+          {currentPage > 1 && <button onClick={handlePrevPage}>Previous 10</button>}
+          {currentPage < totalPages && <button onClick={handleNextPage}>Next 10</button>}
         </div>
     </>
   )
