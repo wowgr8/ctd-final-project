@@ -1,0 +1,28 @@
+#pagination {
+  margin-top: 8px;
+  display: flex;
+  justify-content: end;
+  flex: 1;
+}
+
+#pagination button:first-of-type {
+  margin-right: auto;
+}
+
+#pagination button:last-of-type {
+  margin-left: auto;
+}
+
+#tableRow button {
+  background-color:rgb(57, 200, 153);
+}
+
+/* .btn1 {
+  margin-left: 8px;
+
+} */
+
+.btn2 {
+  margin-left: 8px;
+
+}
