@@ -22,7 +22,6 @@ td button {
   padding: 4px 8px;
   border-radius: 4px;
   border: none;
-  background-color: #e86057;
   color: white;
   cursor: pointer;
 }
@@ -38,4 +37,28 @@ td:nth-child(2):hover {
   white-space: normal;
   overflow: visible;
   z-index: 1;
+}
+
+#editBtn {
+  background-color:aqua
+}
+
+#doneBtn {
+  background-color:rgb(0, 255, 140);
+}
+
+#trashBtn {
+  background-color: #e86057;
+}
+
+#editBtn:hover {
+  background-color:rgb(46, 198, 198)
+}
+
+#doneBtn:hover {
+  background-color:rgb(87, 209, 154);
+}
+
+#trashBtn:hover {
+  background-color: #c35149;
 }
