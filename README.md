@@ -10,8 +10,7 @@
 
 ## Previews <a id="previews"></a>
 
-![]("preview WIP")
-![]("preview WIP")
+![](https://github.com/wowgr8/ctd-final-project/blob/main/src/img/Proj-Demo-Screenshot.jpg)
 
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png)
