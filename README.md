@@ -45,7 +45,7 @@
 
 ## Description <a id="description"></a>
 
-A React application where the user can create an errand and add it to a list of errands. The user can create, read, update, and delete errands. 
+This React project is a user-friendly web application that enables users to manage their daily errands with ease. Users can create, update, and delete errands, and the application will dynamically add them to an AirTable database using the fetch API. This project provides a seamless experience for the users, with a simple and intuitive interface that makes it easy to keep track of their errands. 
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png)
 
